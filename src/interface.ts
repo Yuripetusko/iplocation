@@ -20,7 +20,7 @@ export interface GenericResponse {
 
 const keys: { [key: string]: string[]; } = {
     country: ["country_name", "country.name", "country"],
-    countryCode: ["country_code", "country.code", "country"],
+    countryCode: ["countryCode", "country_code", "country.code", "country"],
     region: ["region"],
     regionCode: ["region_code"],
     city: ["city"],
