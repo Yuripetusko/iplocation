@@ -4,8 +4,11 @@ import request from "request";
 import { normalise, validateIp, IPResponse } from "./interface";
 
 const defaultProviders: string[] = [
-    "https://ipapi.co/*/json/",
-    "https://ipinfo.io/*"
+    "https://extreme-ip-lookup.com/json/*",
+    "http://free.ipwhois.io/json/*",
+    "https://ipapi.co/json/*",
+    "https://freegeoip.app/json/*",
+    "https://get.geojs.io/v1/ip/geo.json*"
 ];
 
 const log = debug("iplocation");
