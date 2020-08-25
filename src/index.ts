@@ -4,9 +4,10 @@ import request from "request";
 import { normalise, validateIp, IPResponse } from "./interface";
 
 const defaultProviders: string[] = [
+    "http://ip-api.com/json/*",
+    "https://ipapi.co/json/*",
     "https://extreme-ip-lookup.com/json/*",
     "http://free.ipwhois.io/json/*",
-    "https://ipapi.co/json/*",
     "https://freegeoip.app/json/*",
     "https://get.geojs.io/v1/ip/geo.json*"
 ];
@@ -60,7 +61,7 @@ export default function(
             try {
                 log("got: " + body);
                 json = JSON.parse(body);
-                if (json.error) {
+                if (json.error || (!json.country && json.message)) {
                     return retry(++i, callback);
                 }
             } catch (ex) {
